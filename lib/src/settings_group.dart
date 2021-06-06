@@ -52,7 +52,10 @@ class SettingsGroup extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.left,
-            overflow: TextOverflow.fade
+            overflow: TextOverflow.fade,
+            style: TextStyle(
+              color: Theme.of(context).accentColor,
+            ),
           ),
           ...content,
         ],
