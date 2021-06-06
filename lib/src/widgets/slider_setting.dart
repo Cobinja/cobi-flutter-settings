@@ -68,6 +68,7 @@ class _SwitchSettingState extends SettingsWidgetBaseState<double, SliderSetting>
         },
         onChanged: (val) => setState(() => (sliderValue = val)),
         activeColor: Theme.of(context).accentColor,
+        inactiveColor: Theme.of(context).accentColor.withOpacity(0.5),
       )
     );
   }
