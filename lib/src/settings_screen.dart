@@ -1,6 +1,5 @@
 import 'package:cobi_flutter_settings/src/settings_widget_base.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 /// The uppermost container for settings widgets
 /// 

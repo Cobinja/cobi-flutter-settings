@@ -1,5 +1,4 @@
 import 'package:cobi_flutter_settings/cobi_flutter_settings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
