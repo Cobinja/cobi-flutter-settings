@@ -32,7 +32,10 @@ class MyHomePage extends StatelessWidget {
         title: 'App Settings',
         children: [
           SettingsGroup(
-            title: 'Switchable Settings',
+            title: 'Switchable Settings with different header color',
+            style: TextStyle(
+              color: Colors.black54,
+            ),
             children: [
               SwitchSetting(
                 settingsKey: 'switch-setting',

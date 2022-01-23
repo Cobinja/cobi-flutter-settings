@@ -14,11 +14,13 @@ class SettingsGroup extends StatelessWidget {
   /// All children go here
   final List<Widget> children;
   final String title;
+  final TextStyle? style;
   
   SettingsGroup({
     Key? key,
     required this.title,
     required this.children,
+    this.style
   }) : super(key: key);
   
   @override
@@ -53,7 +55,7 @@ class SettingsGroup extends StatelessWidget {
             title,
             textAlign: TextAlign.left,
             overflow: TextOverflow.fade,
-            style: TextStyle(
+            style: style ?? TextStyle(
               color: Theme.of(context).accentColor,
             ),
           ),
