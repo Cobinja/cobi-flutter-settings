@@ -45,6 +45,14 @@ TextSetting<int>(
   },
 ),
 ```
+### ImageSetting
+A widget with an image picker that stores the filename as a string
+```dart
+ImageSetting(
+  settingsKey: 'image-setting',
+  title: 'This is an image setting'
+),
+```
 ### SwitchSetting
 A widget with a two-state switch
 ```dart

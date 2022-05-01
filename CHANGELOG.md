@@ -1,3 +1,7 @@
+## [1.2.0] - May 1st, 2022
+
+* Added ImageSetting
+
 ## [1.1.0] - January 23rd, 2022
 
 * Add customizable text styling to settings group

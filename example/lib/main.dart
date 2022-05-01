@@ -48,6 +48,11 @@ class MyHomePage extends StatelessWidget {
               ),
             ],
           ),
+          ImageSetting(
+            settingsKey: 'image-setting',
+            title: 'This is an image setting',
+            showPreview: true,
+          ),
           SettingsGroup(
             title: 'Text Settings',
             children: [
