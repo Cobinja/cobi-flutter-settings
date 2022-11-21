@@ -43,6 +43,8 @@ abstract class SettingsWidgetBase<T> extends StatefulWidget {
 /// The base state class for [SettingsWidgetBase]
 /// 
 /// This takes care of persisting the value via shared_preferences
+/// You can subclass this to support more complex data types than supported by shared_preferences.
+/// When subclassing for complex types, implement [serialize] and [deserialize]. Please see the included example.
 abstract class SettingsWidgetBaseState<T, W extends SettingsWidgetBase<T>> extends State<W> {
   
   @protected
@@ -69,6 +71,10 @@ abstract class SettingsWidgetBaseState<T, W extends SettingsWidgetBase<T>> exten
     this.prefs = prefs;
     Object? currentValue = prefs.get(widget.settingsKey!);
     
+    if (!(T is String) && (currentValue is String)) {
+      currentValue = deserialize(currentValue);
+    }
+    
     setState(() {
       if (currentValue != null && !(currentValue is T?)) {
         value = widget.defaultValue;
@@ -80,13 +86,17 @@ abstract class SettingsWidgetBaseState<T, W extends SettingsWidgetBase<T>> exten
     });
   }
   
+  /// override this for more complex data types
+  /// than the ones supported by shared_preferences.
+  @protected
+  T? deserialize(String? data) { }
+  
+  /// override this for more complex data types
+  /// than the ones supported by shared_preferences.
+  @protected
+  String? serialize() { }
+  
   /// Here the actual storing takes place
-  /// 
-  /// This method can be overridden by subclasses in cases
-  /// where a subclass needs to store e.g. a data type that
-  /// is not directly suported by shared_preferences.
-  /// An overriding subclass should make sure
-  /// that null values are removed from shared_preferences.
   void persist() {
     if (widget.settingsKey == null) {
       return;
@@ -119,6 +129,10 @@ abstract class SettingsWidgetBaseState<T, W extends SettingsWidgetBase<T>> exten
         }
         break;
       default:
+        String? data = serialize();
+        if (data != null) {
+          prefs.setString(settingsKey, data);
+        }
         break;
     }
   }
