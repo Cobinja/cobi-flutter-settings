@@ -12,4 +12,5 @@ export 'src/widgets/radio_setting.dart';
 export 'src/widgets/custom_setting.dart';
 export 'src/widgets/slider_setting.dart';
 export 'src/widgets/image_setting.dart';
+export 'src/widgets/multiselect_setting.dart';
 export 'src/common.dart';

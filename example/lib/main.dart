@@ -84,6 +84,16 @@ class MyHomePage extends StatelessWidget {
               ),
             ],
           ),
+          MultiSelectSetting<String>(
+            settingsKey: 'multi-select-setting',
+            title: "A multi-select setting",
+            items: [
+              ListItem(value: "hello", caption: "Hello"),
+              ListItem(value: "world", caption: "World"),
+              ListItem(value: "foo", caption: "foo"),
+              ListItem(value: "bar", caption: "bar"),
+            ]
+          ),
           RadioModalSetting<int>(
             settingsKey: 'radio-modal-setting',
             title: 'This is a modal radio setting',
