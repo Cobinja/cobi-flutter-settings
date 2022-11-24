@@ -115,6 +115,23 @@ SliderSetting(
   defaultValue: 25.0,
 ),
 ```
+### MultiSelectSetting
+A setting that shows a multi-selection list
+```dart
+MultiSelectSetting<String>(
+  settingsKey: 'multi-select-setting',
+  title: "A multi-select setting",
+  items: [
+    ListItem(value: "hello", caption: "Hello"),
+    ListItem(value: "world", caption: "World"),
+    ListItem(value: "foo", caption: "foo"),
+    ListItem(value: "bar", caption: "bar"),
+  ]
+),
+```
 #### You can find more example use cases in the included example app.
 ## Extensibility
-You can define your own widgets by subclassing ``SettingsWidgetBase<T>`` and ``SettingsWidgetBaseState<T, YourSettingsWidgetClass>`` with ``T`` being the type stored via shared_preferences. If you need a data type *not* supplied by shared_preferences, you can override ``SettingsWidgetBaseState::persist()`` and do the serialization yourself.
+You can define your own widgets by subclassing ``SettingsWidgetBase<T>`` and ``SettingsWidgetBaseState<T, YourSettingsWidgetClass>`` with ``T`` being the type stored via shared_preferences.
+
+If you need a data type *not* supplied by shared_preferences, you can override ``SettingsWidgetBaseState::serialize()`` and ``SettingsWidgetBaseState::deserialize()`` and do the serialization yourself.
+#### Note: Serialization and deserialization behave different since version 2.0.0. See the included example

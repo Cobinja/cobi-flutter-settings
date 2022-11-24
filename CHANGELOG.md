@@ -1,3 +1,8 @@
+## [2.0.0] - November 24th, 2022
+
+* Added MultiSelectSetting
+* Improved support for complex data types
+
 ## [1.2.0] - May 1st, 2022
 
 * Added ImageSetting
