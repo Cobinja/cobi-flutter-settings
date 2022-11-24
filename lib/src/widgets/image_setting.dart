@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 
 import '../settings_widget_base.dart';
 
-/// AN image setting
+/// An image setting
 ///
 /// When tapped, this shows the system's image chooser.
 /// The filename is stored as a string.
