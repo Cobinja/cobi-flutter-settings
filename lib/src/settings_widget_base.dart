@@ -71,7 +71,7 @@ abstract class SettingsWidgetBaseState<T, W extends SettingsWidgetBase<T>> exten
     this.prefs = prefs;
     Object? currentValue = prefs.get(widget.settingsKey!);
     
-    if (!(T is String) && (currentValue is String)) {
+    if (!(T == String) && (currentValue is String)) {
       currentValue = deserialize(currentValue);
     }
     
@@ -89,12 +89,16 @@ abstract class SettingsWidgetBaseState<T, W extends SettingsWidgetBase<T>> exten
   /// override this for more complex data types
   /// than the ones supported by shared_preferences.
   @protected
-  T? deserialize(String? data) { }
+  T? deserialize(String? data) {
+    return null;
+  }
   
   /// override this for more complex data types
   /// than the ones supported by shared_preferences.
   @protected
-  String? serialize() { }
+  String? serialize() {
+    return null;
+  }
   
   /// Here the actual storing takes place
   void persist() {
