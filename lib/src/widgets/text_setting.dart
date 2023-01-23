@@ -110,41 +110,12 @@ class TextSetting<T> extends SettingsWidgetBase<T> {
 }
 
 class _TextSettingState<T> extends SettingsWidgetBaseState<T, TextSetting<T>> {
-  
-  String? usedSubtitle;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  
-  @override
-  init() {
-    super.init();
-    if (value != null) {
-      usedSubtitle = value.toString();
-    }
-    else {
-      usedSubtitle = widget.subtitle ?? '';
-    }
-  }
-  
-  @override
-  void onChanged(T? newValue) {
-    setState(() {
-      this.value = newValue;
-      if (value != null && value != '') {
-        usedSubtitle = value.toString();
-      }
-      else if (widget.subtitle != null) {
-        usedSubtitle = widget.subtitle;
-      }
-      else {
-        usedSubtitle = '';
-      }
-      persist();
-    });
-  }
   
   doChange(String? newValue) {
     if (newValue == null) {
       onChanged(newValue as T?);
+      return;
     }
     
     switch(T) {
@@ -152,10 +123,10 @@ class _TextSettingState<T> extends SettingsWidgetBaseState<T, TextSetting<T>> {
         onChanged(newValue as T?);
         break;
       case int:
-        onChanged(int.tryParse(newValue!) as T?);
+        onChanged(int.tryParse(newValue) as T?);
         break;
       case double:
-        onChanged(double.tryParse(newValue!) as T?);
+        onChanged(double.tryParse(newValue) as T?);
         break;
       default:
         break;
@@ -275,9 +246,18 @@ class _TextSettingState<T> extends SettingsWidgetBaseState<T, TextSetting<T>> {
   
   @override
   Widget build(BuildContext context) {
+    String usedSubtitle = '';
+    if (this.value != null && this.value != '') {
+      usedSubtitle = this.value.toString();
+    }
+    
+    if (usedSubtitle == '' && widget.subtitle != null) {
+      usedSubtitle = widget.subtitle!;
+    }
+    
     return ListTile(
       title: Text(widget.title),
-      subtitle: usedSubtitle != null ? Text(usedSubtitle!) : Text(''),
+      subtitle: Text(usedSubtitle),
       leading: widget.leading,
       onTap: _onTap,
       enabled: widget.enabled,
