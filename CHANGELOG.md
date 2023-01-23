@@ -1,3 +1,8 @@
+## [2.0.1] - January 23rd, 2023
+
+* Fix string serialzation
+* Refactored subtitle generation in TextSetting
+
 ## [2.0.0] - November 24th, 2022
 
 * Added MultiSelectSetting
