@@ -12,8 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.teal[400]
+        primarySwatch: Colors.indigo
       ),
       home: MyHomePage(),
     );
@@ -34,7 +33,7 @@ class MyHomePage extends StatelessWidget {
           SettingsGroup(
             title: 'Switchable Settings with different header color',
             style: TextStyle(
-              color: Colors.black54,
+              color: Colors.teal,
             ),
             children: [
               SwitchSetting(
