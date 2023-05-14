@@ -1,3 +1,7 @@
+## [2.1.0] - May 14th, 2023
+
+* Update for Flutter 3.10
+
 ## [2.0.1] - January 23rd, 2023
 
 * Fix string serialzation
