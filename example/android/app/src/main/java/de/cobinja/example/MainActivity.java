@@ -1,4 +1,4 @@
-package com.example.cobi_flutter_settings_example;
+package de.cobinja.example;
 
 import io.flutter.embedding.android.FlutterActivity;
 
