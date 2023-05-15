@@ -1,11 +1,11 @@
 name: cobi_flutter_settings
 description: An application settings screen for flutter that persists values via the shared_preferences package
-version: 2.1.0
+version: 2.1.1
 homepage: https://github.com/Cobinja/cobi-flutter-settings
 repository: https://github.com/Cobinja/cobi-flutter-settings
 
 environment:
-  sdk: ">=2.12.0 <=3.0.0"
+  sdk: ">=2.12.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:

@@ -1,3 +1,7 @@
+## [2.1.1] - May 15th, 2023
+
+* Fixed dart SDK version
+
 ## [2.1.0] - May 14th, 2023
 
 * Update for Flutter 3.10
